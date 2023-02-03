@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+
+void solve(){
+    int n;
+    cin>>n;
+    string str;
+    cin>>str;
+    int i=0,j=str.size()-1;
+    for(int a=0;a<str.size();a++){
+        if(i==j){
+            
+        }else{
+            i++;
+            j-p
+        }
+    }
+
+}
+
+int32_t main()
+{
+    int t;
+    cin>>t;
+    while(t--){
+        solve();
+    }
+    return 0;
+}
