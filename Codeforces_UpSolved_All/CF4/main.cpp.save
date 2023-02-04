@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+
+#define          all(v)              v.begin(), v.end()
+#define         rall(v)              v.rbegin(),v.rend()
+
+#define            pb                push_back
+#define          sz(a)               (int)a.size()
+
+void solve() {
+    int n; string s; cin >> n >> s;
+    vector<int> cnt(26, 0), p(26, 0);
+    for(auto x: s) cnt[x - 'a']++;
+    int ans = 0;
+    for(auto x: s) {
+        --cnt[x - 'a'];
+        ++p[x - 'a'];
+        int cur = 0;
+        
+        //here min(1,cnt[i]) always 1 because maximum
+        for(int i = 0; i < 26; ++i) {
+            cur += min(1, cnt[i]) + min(1, p[i]);
+        }
+        ans = max(ans, cur);
+    }
+    cout << ans << "\n";
+}
+
+int32_t main() {
+    //This Line is most most usefull in competitve programming
+    //This Line Today at 4/02 give my answer where I asked In 4th Sem First Time When I solved My First CodeCheff Question.
+    //Amazing I'm Happy.
+    ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+    int t = 1;
+    cin >> t;
+    while(t--) {
+        solve();
+    }
+}
